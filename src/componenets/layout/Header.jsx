@@ -47,7 +47,7 @@ const Header = () => {
                 <div className="container">
                     <div className="header-flex">
                         <button className="mobile-toggle" onClick={toggleDrawer}>
-                             <PiListThin size={26} />
+                            <PiListThin size={26} />
                         </button>
                         <div className={`menu ${drawerOpen ? "drawer-open" : ""}`}>
                             <div className="drawer-close-container" onClick={() => setDrawerOpen(false)}>
@@ -55,7 +55,7 @@ const Header = () => {
                             </div>
                             <Nav closeDrawer={() => setDrawerOpen(false)} />
                         </div>
-                        <div className="logo"><Logo /></div>
+                        <div className="logo-wrapper"><Logo /></div>
                         <div className="karing">
                             <div className="karing-flex">
                                 {/* <button><PiUserFocusThin size={24} /></button> */}

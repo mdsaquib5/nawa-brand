@@ -140,6 +140,10 @@
     section:not([aria-label*="Notifications"]) {
         padding-bottom: 60px;
     }
+
+    .header-flex>div {
+        flex: initial;
+    }
 }
 
 /* <= 992px */
