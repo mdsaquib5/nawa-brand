@@ -33,13 +33,12 @@ const Hero = () => {
             >
                 {banners.map((banner, index) => (
                     <SwiperSlide key={index}>
-                        <div 
-                            className="hero-slide" 
+                        <div
+                            className="hero-slide"
                             style={{ backgroundImage: `url(${banner.bgImage})` }}
                         >
-                            {/* Glossy Overlay */}
                             <div className="hero-overlay"></div>
-                            
+
                             <div className="container hero-container">
                                 <div className="hero-content">
                                     <div className="hero-sub">
