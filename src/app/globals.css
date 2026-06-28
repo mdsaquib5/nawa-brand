@@ -1576,7 +1576,8 @@ footer::before {
 }
 
 .story-title .heading {
-    font-size: 43px !important;
+    text-align: start;
+    font-size: 43px;
 }
 
 .story-desc {
