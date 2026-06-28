@@ -1,16 +1,26 @@
 :root {
     --font-inter: 'Inter', sans-serif;
     --font-cinzel: 'Cinzel', serif;
-    --primary: #6e2b33;
-    /* --secondary: #e7c7cb; */
-    --secondary: #c26684;
-    --bg-light: #fbf1ed;
-    --text: #6b5a5e;
-    --white: #fff;
-    --black: #000;
-    --accent: #55544e;
-    --lightBlack: #d0ba9e;
+    --primary: #8b2332;
+    --secondary: #e6b8a2;
+    --bg-light: #fcf9f8;
+    --text: #4a4042;
+    --white: #ffffff;
+    --black: #1a1516;
+    --accent: #d4a373;
+    --lightBlack: #8c7f82;
+    --glass-bg: #ffffffd9;
+    --glass-border: #ffffff33;
 }
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
 
 .section-title {
     width: fit-content;
@@ -93,12 +103,12 @@ nav ul li:not(.dropdown-ul li) {
 }
 
 nav ul li a {
-    color: var(--accent);
+    color: var(--primary);
     transition: all .4s ease 0s;
 }
 
 nav ul li a:hover {
-    color: var(--secondary);
+    color: var(--text);
 }
 
 .dropdown {
@@ -125,9 +135,50 @@ nav ul li a:hover {
 }
 
 .dropdown:hover .dropdown-ul {
+    /* Hover logic handled in responsive.css for desktop only */
+}
+
+.dropdown.open .dropdown-ul {
     opacity: 1;
     transform: scaleY(1);
     visibility: visible;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: space-between;
+}
+
+/* Header Scroll Effects */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+header.header-scrolled .top-bar {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.main-header {
+    transition: all 0.3s ease-in-out;
+}
+
+.main-header.shrink {
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
 }
 
 .dropdown .dropdown-ul li a {
@@ -161,13 +212,13 @@ nav ul li a:hover {
 .karing svg {
     width: 24px;
     height: 24px;
-    color: var(--accent);
+    color: var(--primary);
     transition: all .4s ease 0s;
 }
 
 .karing a:hover svg,
 .karing button:hover svg {
-    color: var(--secondary);
+    color: var(--text);
 }
 
 .header-flex>div {
@@ -180,7 +231,7 @@ nav ul li a:hover {
     font-size: 14px;
     font-weight: 300;
     background: linear-gradient(90deg, var(--primary) 0%, #c26684 100%);
-    color: var(--lightBlack);
+    color: var(--white);
     padding-block: 10px;
     letter-spacing: 1px;
 }
@@ -221,16 +272,21 @@ nav ul li a:hover {
 }
 
 .num-email a {
-    color: var(--lightBlack);
+    color: var(--white);
+}
+
+.num-email svg {
+    width: 20px;
+    height: 20px;
 }
 
 .topbar-media a {
-    color: var(--lightBlack);
+    color: var(--white);
 }
 
 .topbar-media a svg {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
 }
 
 .main-header {
@@ -240,7 +296,6 @@ nav ul li a:hover {
 
 /* heder css ends */
 .hero-bg {
-    /* background: linear-gradient(60deg, #e7c7cbb0 40%, #e7c7cb00 60%), url('/banners/banner11.png') no-repeat center / cover; */
     background: linear-gradient(60deg, #c266844a 40%, #e7c7cb00 60%), url('/banners/banner11.png') no-repeat center / cover;
     background-size: cover;
     display: flex;
@@ -256,7 +311,7 @@ nav ul li a:hover {
     max-width: 900px;
 }
 
-.hero-sub {
+/* .hero-sub {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -279,7 +334,7 @@ nav ul li a:hover {
     background: linear-gradient(145deg, var(--black) 0%, var(--primary) 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-}
+} */
 
 .hero-sub svg {
     color: var(--accent);
@@ -308,7 +363,6 @@ nav ul li a:hover {
     font-size: 13px;
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 0.9px;
     width: fit-content;
     align-items: center;
     overflow: hidden;
@@ -348,12 +402,12 @@ nav ul li a:hover {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0;
+    gap: 30px;
     text-align: center;
 }
 
 .service-card {
-    padding: 46px;
+    padding: 40px;
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -394,15 +448,6 @@ nav ul li a:hover {
 
 .service-card:hover {
     transform: translateY(-20px) scale(1.03);
-    background-color: var(--primary);
-}
-
-.service-card:hover :is(.service-icon, .service-title) {
-    color: var(--bg-light);
-}
-
-.service-card:hover svg {
-    color: var(--bg-light);
 }
 
 .service-card:hover::before {
@@ -471,12 +516,12 @@ nav ul li a:hover {
 }
 
 .category-name {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 600;
     letter-spacing: 2px;
-    color: var(--primary);
     font-family: var(--font-cinzel);
     text-transform: uppercase;
+    color: var(--black);
 }
 
 .category-btn {
@@ -854,7 +899,7 @@ nav ul li a:hover {
 }
 
 .brand-heading {
-    font-size: 80px;
+    font-size: 63px;
     font-family: var(--font-cinzel);
     background: linear-gradient(145deg, var(--black) 0%, var(--primary) 100%);
     -webkit-text-fill-color: transparent;
@@ -877,17 +922,13 @@ nav ul li a:hover {
     padding-left: 6px;
 }
 
-.brand-content-wrapper .btn {
-    margin-top: 26px;
-    padding-block: 16px;
-}
-
 /* brands css ends */
 
 footer {
-    background-color: var(--black);
-    color: var(--bg-light);
     position: relative;
+    background-color: var(--primary);
+    color: var(--bg-light);
+    padding-top: 50px;
 }
 
 footer::before {
@@ -902,9 +943,8 @@ footer::before {
 
 .footer-topbar {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 18px;
-    margin-bottom: 50px;
 }
 
 .footer-links {
@@ -919,7 +959,7 @@ footer::before {
     color: var(--white);
     font-weight: 600;
     letter-spacing: 2px;
-    font-size: 26px;
+    font-size: 23px;
 }
 
 .footer-links ul {
@@ -931,9 +971,10 @@ footer::before {
 }
 
 .footer-links li a {
-    color: #c2668475;
+    color: var(--bg-light);
     font-weight: 300;
     letter-spacing: 1px;
+    font-size: 14px;
     text-transform: uppercase;
     transition: all 0.5s ease;
 }
@@ -943,10 +984,6 @@ footer::before {
     letter-spacing: 3px;
 }
 
-.footer-brand {
-    padding-block: 60px;
-}
-
 .footer-brand .logo img {
     width: 120px;
     filter: contrast(0.5) brightness(2.9);
@@ -954,9 +991,11 @@ footer::before {
 
 .footer-bottombar {
     display: grid;
-    border-top: 1px solid #55544e57;
+    /* border-top: 1px solid #55544e57; */
     padding-block: 16px;
     grid-template-columns: repeat(3, 1fr);
+    color: #fff9;
+    font-size: 13px;
 }
 
 .footer-bottombar {
@@ -982,4 +1021,652 @@ footer::before {
 
 .signature {
     justify-content: flex-end;
+}
+
+/* --- Extracted Inline Styles --- */
+
+/* Tittle.jsx */
+.nawa-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.nawa-sub-title {
+    font-family: var(--font-inter);
+    font-size: 14px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.nawa-heading {
+    font-family: var(--font-cinzel);
+    font-size: 36px;
+    color: var(--black);
+    font-weight: 700;
+    margin: 0;
+}
+
+.nawa-bottom-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    color: var(--primary);
+}
+
+.nawa-bottom-line {
+    height: 1px;
+    width: 40px;
+    background-color: var(--glass-border);
+}
+
+/* ProductCard.jsx */
+.nawa-product-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.nawa-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.nawa-product-card:hover .nawa-hover-overlay {
+    opacity: 1;
+}
+
+.nawa-product-badge-container {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nawa-badge-collection {
+    background: var(--primary);
+    color: white;
+    padding: 4px 10px;
+    font-size: 10px;
+    border-radius: 20px;
+    font-family: var(--font-cinzel);
+    letter-spacing: 1px;
+}
+
+.nawa-badge-new {
+    background: var(--secondary);
+    color: white;
+    padding: 4px 10px;
+    font-size: 10px;
+    border-radius: 20px;
+    font-family: var(--font-cinzel);
+    letter-spacing: 1px;
+}
+
+.nawa-badge-restocked {
+    background: var(--black);
+    color: white;
+    padding: 4px 10px;
+    font-size: 10px;
+    border-radius: 20px;
+    font-family: var(--font-cinzel);
+    letter-spacing: 1px;
+}
+
+.nawa-product-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.nawa-product-image {
+    transition: transform 0.5s ease;
+}
+
+.nawa-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+}
+
+.nawa-quick-shop-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: none;
+    font-family: var(--font-cinzel);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.nawa-quick-shop-btn:hover {
+    transform: scale(1.05);
+}
+
+.nawa-product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.nawa-product-title {
+    font-family: var(--font-inter);
+    font-size: 15px;
+    color: var(--black);
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.nawa-product-price-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.nawa-discounted-price {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.nawa-original-price {
+    color: var(--lightBlack);
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+.nawa-discount-percent {
+    color: #d4af37;
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* TestimonialCard.jsx */
+.nawa-testimonial-card {
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    height: 100%;
+}
+
+.nawa-featured-testimonial {
+    border: 1px solid var(--primary);
+}
+
+.nawa-featured-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 4px 12px;
+    font-size: 11px;
+    border-radius: 20px;
+    font-family: var(--font-cinzel);
+    letter-spacing: 1px;
+}
+
+.nawa-testimonial-stars {
+    display: flex;
+    gap: 2px;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.nawa-testimonial-comment {
+    font-family: var(--font-inter);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.7;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.nawa-testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 15px;
+}
+
+.nawa-avatar-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.nawa-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nawa-user-info {
+    flex-grow: 1;
+}
+
+.nawa-user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+    font-family: var(--font-cinzel);
+}
+
+.nawa-user-location {
+    font-size: 12px;
+    color: var(--lightBlack);
+}
+
+.nawa-num,
+.nawa-email {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nawa-topbar-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.nawa-topbar-text {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.nawa-topbar-media {
+    display: flex;
+    gap: 10px;
+}
+
+.nawa-topbar-icon {
+    color: inherit;
+    font-size: 18px;
+}
+
+.nawa-drawer-close-container {
+    display: none;
+    justify-content: flex-end;
+    padding-top: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+/* Footer.jsx */
+
+.nawa-footer-topbar {
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ffffff1a;
+}
+
+.nawa-footer-brand {
+    flex: 1;
+}
+
+.nawa-footer-logo-wrapper {
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.nawa-footer-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.nawa-social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nawa-social-link {
+    color: var(--white);
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.nawa-social-link:hover {
+    color: #d4af37;
+}
+
+.nawa-footer-links {
+    flex: 1 1 150px;
+}
+
+.nawa-footer-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nawa-footer-linking {
+    display: flex;
+    gap: 20px;
+}
+
+.nawa-bottom-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.nawa-dev-link {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+/* Hero.jsx */
+.nawa-hero-section {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    min-height: 600px;
+    margin-top: 120px;
+}
+
+.nawa-hero-swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.nawa-hero-slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nawa-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.4) 100%);
+    z-index: 1;
+}
+
+.nawa-hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.nawa-hero-content {
+    max-width: 600px;
+}
+
+.nawa-hero-sub {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-family: var(--font-cinzel);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+.nawa-hero-heading {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-family: var(--font-cinzel);
+}
+
+.nawa-hero-desc {
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.nawa-hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nawa-btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nawa-btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Category.jsx */
+.nawa-category-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.nawa-category-swiper-wrapper {
+    margin-top: 40px;
+}
+
+.nawa-category-swiper {
+    padding-bottom: 50px;
+}
+
+.nawa-category-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+.nawa-category-image-wrapper {
+    height: 400px;
+    overflow: hidden;
+}
+
+.nawa-category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.nawa-category-card:hover .nawa-category-image {
+    transform: scale(1.1);
+}
+
+.nawa-category-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nawa-category-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Services.jsx */
+.nawa-service-section {
+    padding: 60px 0;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.nawa-service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px #00000008;
+    transition: transform 0.3s ease;
+}
+
+.nawa-service-icon {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.nawa-service-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 8px;
+    font-family: var(--font-cinzel);
+}
+
+.nawa-service-desc {
+    font-size: 13px;
+    color: var(--text);
+}
+
+/* BrandStory.jsx */
+.nawa-brand-story-section {
+    background-color: var(--bg-light);
+}
+
+.nawa-story-flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 40px;
+}
+
+.nawa-story-title {
+    margin-inline: initial;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.nawa-story-subtitle-wrap {
+    justify-content: flex-start;
+}
+
+.nawa-story-subtitle {
+    font-family: var(--font-cinzel);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.nawa-story-heading {
+    font-size: 43px !important;
+}
+
+.nawa-story-desc {
+    color: var(--text);
+    line-height: 1.8;
+    width: 94%;
+    margin-bottom: 20px;
+}
+
+.nawa-story-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.nawa-story-image {
+    flex: 1 1 400px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.nawa-story-image-placeholder {
+    width: 100%;
+    height: 450px;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.nawa-story-placeholder-text {
+    font-family: var(--font-cinzel);
+    font-size: 24px;
 }

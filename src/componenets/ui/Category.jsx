@@ -1,5 +1,11 @@
+"use client";
 import { BsArrowRight } from "react-icons/bs";
 import Titles from "../layout/Tittle";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const Category = () => {
     const categories = [
@@ -22,26 +28,51 @@ const Category = () => {
             id: 4,
             name: "Raatrani",
             image: "/nawa-phulkari-cotton-collection/raatrani/3.jpg",
+        },
+        {
+            id: 5,
+            name: "The Odisha Edit",
+            image: "/nawa-phulkari-cotton-collection/peeli-dhoop/1.jpg",
         }
     ];
+
     return (
-        <section>
+        <section className="nawa-category-section">
             <div className="container">
-                <Titles subTitle={'Categories'} title={"Shop by Category"} />
-                <div className="category-grid">
-                    {categories.map((item) => (
-                        <div className="category-card" key={item.id}>
-                            <div className="category-image-wrapper">
-                                <img src={item.image} alt={item.name} className="category-image" />
-                            </div>
-                            <div className="category-content">
-                                <h2 className="category-name">{item.name}</h2>
-                                <button className="category-btn">
-                                    Shop Now <BsArrowRight className="btn-icon" />
-                                </button>
-                            </div>
-                        </div>
-                    ))}
+                <Titles subTitle={'Collections'} title={"Shop by Category"} />
+                
+                <div className="nawa-category-swiper-wrapper">
+                    <Swiper
+                        modules={[Autoplay, Pagination, Navigation]}
+                        spaceBetween={30}
+                        slidesPerView={1}
+                        autoplay={{ delay: 3500, disableOnInteraction: false }}
+                        pagination={{ clickable: true, dynamicBullets: true }}
+                        breakpoints={{
+                            640: { slidesPerView: 2 },
+                            992: { slidesPerView: 3 },
+                            1200: { slidesPerView: 4 }
+                        }}
+                        className="nawa-category-swiper"
+                    >
+                        {categories.map((item) => (
+                            <SwiperSlide key={item.id}>
+                                <div className="category-card nawa-category-card">
+                                    <div className="category-image-wrapper nawa-category-image-wrapper">
+                                        <img src={item.image} alt={item.name} className="nawa-category-image" />
+                                    </div>
+                                    <div className="category-content glass-panel nawa-category-content">
+                                        <h2 className="category-name nawa-category-name">
+                                            {item.name}
+                                        </h2>
+                                        <button className="category-btn nawa-category-btn">
+                                            Shop Now <BsArrowRight />
+                                        </button>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
             </div>
         </section>
