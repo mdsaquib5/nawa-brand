@@ -1,0 +1,35 @@
+/* <= 1820px */
+@media (min-width: 1820px) {}
+
+/* <= 1600px */
+@media (max-width: 1600px) {}
+
+@media screen and (min-width: 1440px) and (max-width: 1540px) {}
+
+/* <= 1440px */
+@media (min-width: 1440px) {}
+
+@media (max-width: 1440px) {}
+
+/* Desktop dropdown hover styling */
+@media (min-width: 1201px) {}
+
+/* <= 1200px */
+@media (max-width: 1200px) {}
+
+/* <= 1024px */
+@media (max-width: 1024px) {}
+
+/* <= 992px */
+@media (max-width: 992px) {}
+
+@media (min-width: 769px) {}
+
+/* <= 768px */
+@media (max-width: 768px) {}
+
+/* <= 576px */
+@media (max-width: 576px) {}
+
+/* <= 360px */
+@media (max-width: 360px) {}

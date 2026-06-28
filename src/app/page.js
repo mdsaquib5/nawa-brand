@@ -1,10 +1,21 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Arrivals from "@/componenets/ui/Arrivals";
+import Brand from "@/componenets/ui/Brand";
+import Category from "@/componenets/ui/Category";
+import Hero from "@/componenets/ui/Hero";
+import Product from "@/componenets/ui/Product";
+import Services from "@/componenets/ui/Services";
+import Testimonial from "@/componenets/ui/Testimonial";
 
 export default function Home() {
   return (
     <>
-    <div
+      <Hero />
+      <Services />
+      <Category />
+      <Product />
+      <Brand />
+      <Testimonial />
+      <Arrivals />
     </>
   );
 }
