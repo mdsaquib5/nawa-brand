@@ -25,14 +25,14 @@ const Services = () => {
         }
     ];
     return (
-        <section className="service-bg nawa-service-section">
+        <section className="service-bg">
             <div className="container">
-                <div className="services-grid nawa-services-grid">
+                <div className="services-grid">
                     {services.map((service, index) => (
-                        <div className="service-card nawa-service-card" key={index}>
-                            <div className="service-icon nawa-service-icon">{service.icon}</div>
-                            <h3 className="service-title nawa-service-title">{service.title}</h3>
-                            <p className="nawa-service-desc">{service.desc}</p>
+                        <div className="service-card" key={index}>
+                            <div className="service-icon">{service.icon}</div>
+                            <h3 className="service-title">{service.title}</h3>
+                            <p className="service-desc">{service.desc}</p>
                         </div>
                     ))}
                 </div>

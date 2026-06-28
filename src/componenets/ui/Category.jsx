@@ -37,11 +37,11 @@ const Category = () => {
     ];
 
     return (
-        <section className="nawa-category-section">
+        <section className="category-section">
             <div className="container">
                 <Titles subTitle={'Collections'} title={"Shop by Category"} />
                 
-                <div className="nawa-category-swiper-wrapper">
+                <div className="category-swiper-wrapper">
                     <Swiper
                         modules={[Autoplay, Pagination, Navigation]}
                         spaceBetween={30}
@@ -53,19 +53,19 @@ const Category = () => {
                             992: { slidesPerView: 3 },
                             1200: { slidesPerView: 4 }
                         }}
-                        className="nawa-category-swiper"
+                        className="category-swiper"
                     >
                         {categories.map((item) => (
                             <SwiperSlide key={item.id}>
-                                <div className="category-card nawa-category-card">
-                                    <div className="category-image-wrapper nawa-category-image-wrapper">
-                                        <img src={item.image} alt={item.name} className="nawa-category-image" />
+                                <div className="category-card">
+                                    <div className="category-image-wrapper">
+                                        <img src={item.image} alt={item.name} className="category-image" />
                                     </div>
-                                    <div className="category-content glass-panel nawa-category-content">
-                                        <h2 className="category-name nawa-category-name">
+                                    <div className="category-content glass-panel">
+                                        <h2 className="category-name">
                                             {item.name}
                                         </h2>
-                                        <button className="category-btn nawa-category-btn">
+                                        <button className="category-btn">
                                             Shop Now <BsArrowRight />
                                         </button>
                                     </div>

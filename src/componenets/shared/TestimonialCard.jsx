@@ -4,33 +4,33 @@ import { PiStarFill } from "react-icons/pi";
 
 const TestimonialCard = ({ item }) => {
     return (
-        <div className={`testimonial-card nawa-testimonial-card ${item.isFeatured ? 'featured nawa-featured-testimonial' : ''}`}>
+        <div className={`testimonial-card ${item.isFeatured ? 'featured' : ''}`}>
             {item.isFeatured && (
-                <div className="featured-badge nawa-featured-badge">
+                <div className="featured-badge">
                     Featured Review
                 </div>
             )}
 
-            <div className="nawa-testimonial-stars">
+            <div className="testimonial-stars">
                 {[...Array(5)].map((_, i) => (
                     <PiStarFill key={i} />
                 ))}
             </div>
 
-            <p className="testimonial-comment nawa-testimonial-comment">"{item.comment}"</p>
+            <p className="testimonial-comment">"{item.comment}"</p>
 
-            <div className="testimonial-header nawa-testimonial-header">
-                <div className="avatar-wrapper nawa-avatar-wrapper">
+            <div className="testimonial-header">
+                <div className="avatar-wrapper">
                     <img
                         src={item.avatar || '/default-avatar.jpg'}
                         alt={item.name}
-                        className="avatar nawa-avatar"
+                        className="avatar"
                     />
                 </div>
 
-                <div className="user-info nawa-user-info">
-                    <h4 className="user-name nawa-user-name">{item.name}</h4>
-                    <p className="user-location nawa-user-location">{item.location}</p>
+                <div className="user-info">
+                    <h4 className="user-name">{item.name}</h4>
+                    <p className="user-location">{item.location}</p>
                 </div>
             </div>
         </div>

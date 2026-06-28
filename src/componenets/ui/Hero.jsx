@@ -22,40 +22,40 @@ const Hero = () => {
     ];
 
     return (
-        <div className="hero-section nawa-hero-section">
+        <div className="hero-section">
             <Swiper
                 modules={[Autoplay, EffectFade, Pagination]}
                 effect="fade"
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
                 pagination={{ clickable: true }}
                 loop={true}
-                className="nawa-hero-swiper"
+                className="hero-swiper"
             >
                 {banners.map((banner, index) => (
                     <SwiperSlide key={index}>
                         <div 
-                            className="hero-slide nawa-hero-slide" 
+                            className="hero-slide" 
                             style={{ backgroundImage: `url(${banner.bgImage})` }}
                         >
                             {/* Glossy Overlay */}
-                            <div className="nawa-hero-overlay"></div>
+                            <div className="hero-overlay"></div>
                             
-                            <div className="container nawa-hero-container">
-                                <div className="hero-content nawa-hero-content">
-                                    <div className="hero-sub nawa-hero-sub">
+                            <div className="container hero-container">
+                                <div className="hero-content">
+                                    <div className="hero-sub">
                                         <GiFlowers size={20} /> Handcrafted Everyday Grace
                                     </div>
-                                    <h1 className="hero-heading nawa-hero-heading">
+                                    <h1 className="hero-heading">
                                         {banner.title}
                                     </h1>
-                                    <p className="nawa-hero-desc">
+                                    <p className="hero-desc">
                                         {banner.subtitle}
                                     </p>
-                                    <div className="nawa-hero-buttons">
-                                        <Link href={'/'} className="btn nawa-btn-primary">
+                                    <div className="hero-buttons">
+                                        <Link href={'/'} className="btn btn-primary">
                                             Shop The Edit
                                         </Link>
-                                        <Link href={'/'} className="btn nawa-btn-outline">
+                                        <Link href={'/'} className="btn btn-outline">
                                             Explore Odisha Craft
                                         </Link>
                                     </div>

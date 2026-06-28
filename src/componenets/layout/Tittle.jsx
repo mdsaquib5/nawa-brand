@@ -2,20 +2,20 @@ import { GiFlowers } from "react-icons/gi";
 
 const Titles = ({ title, subTitle }) => {
     return (
-        <div className="section-title nawa-title">
+        <div className="section-title">
             {subTitle && (
-                <div className="sub-title nawa-sub-title">
+                <div className="sub-title">
                     <GiFlowers /> {subTitle} <GiFlowers />
                 </div>
             )}
-            <h2 className="heading nawa-heading">
+            <h2 className="heading">
                 {title}
             </h2>
             {!subTitle && (
-                <div className="bottom-style nawa-bottom-style">
-                    <span className="nawa-bottom-line"></span>
+                <div className="bottom-style">
+                    <span className="bottom-line"></span>
                     <GiFlowers size={20} />
-                    <span className="nawa-bottom-line"></span>
+                    <span className="bottom-line"></span>
                 </div>
             )}
         </div>

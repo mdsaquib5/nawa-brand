@@ -11,7 +11,7 @@ const Brand = () => {
                             <div className="brand-heading">Bridging Heritage and Everyday Wear</div>
                             <p>Inspired by Odisha's bandha-kala (ikat) and bomkai weavers, we bridge generational thread-craft with lightweight daily wear.</p>
                             <p>Every stitch on a Nawa suit is an ode to the artisans of Odisha. We bring the intricate handiwork of traditional thread-embroidery into your modern weekday routine.</p>
-                            <Link href={'/'} className="btn nawa-btn-primary">
+                            <Link href={'/'} className="btn btn-primary">
                                 Discover now
                             </Link>
                         </div>
