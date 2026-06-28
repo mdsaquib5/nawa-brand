@@ -202,12 +202,6 @@
         grid-template-columns: repeat(1, 1fr) !important;
     }
 
-    .topbar-flex {
-        flex-direction: column;
-        gap: 8px;
-        align-items: center;
-    }
-
     .services-grid {
         grid-template-columns: 1fr !important;
     }
