@@ -6,10 +6,19 @@ import Nav from "../shared/Nav";
 import { PiListThin, PiXThin } from "react-icons/pi";
 import { PiShoppingCartLight, PiPhoneCallThin } from "react-icons/pi";
 import { CiInstagram } from "react-icons/ci";
+import { useCartStore } from "../../store/useCartStore";
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
+    
+    const cart = useCartStore((state) => state.cart);
+    const totalItems = cart ? cart.reduce((acc, item) => acc + item.quantity, 0) : 0;
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -59,7 +68,12 @@ const Header = () => {
                         <div className="karing">
                             <div className="karing-flex">
                                 {/* <button><PiUserFocusThin size={24} /></button> */}
-                                <Link href={'/'}><PiShoppingCartLight size={24} /></Link>
+                                <Link href={'/cart'} className="cart-icon-wrapper">
+                                    <PiShoppingCartLight size={24} />
+                                    {mounted && totalItems > 0 && (
+                                        <span className="cart-badge">{totalItems}</span>
+                                    )}
+                                </Link>
                             </div>
                         </div>
                     </div>

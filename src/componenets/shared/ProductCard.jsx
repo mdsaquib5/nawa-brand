@@ -1,9 +1,20 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { PiShoppingCartThin } from 'react-icons/pi';
+import { useCartStore } from '../../store/useCartStore';
 
 const ProductCard = ({ item }) => {
+    const router = useRouter();
+    const addToCart = useCartStore((state) => state.addToCart);
+
+    const handleQuickShop = (e) => {
+        e.preventDefault();
+        addToCart(item);
+        router.push('/cart');
+    };
+
     return (
         <div className="product-card">
             {(item.badge || item.isNew || item.isRestocked) && (
@@ -27,7 +38,7 @@ const ProductCard = ({ item }) => {
 
                 {/* Hover Overlay */}
                 <div className="hover-overlay">
-                    <button className="quick-shop-btn">
+                    <button className="quick-shop-btn" onClick={handleQuickShop}>
                         <PiShoppingCartThin size={20} /> Quick Shop
                     </button>
                 </div>
