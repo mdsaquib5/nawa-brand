@@ -275,6 +275,27 @@
     .footer-bottombar p {
         text-align: center;
     }
+
+    :is(.swiper-button-prev, .swiper-button-next) svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .hero-section .swiper-button-prev {
+        top: calc(20% + 10px) !important;
+        transform: translateY(-40%) !important;
+    }
+
+    .hero-section .swiper-button-next {
+        top: calc(20% - 30px) !important;
+        transform: translateY(-50%) !important;
+    }
 }
 
 /* <= 360px */

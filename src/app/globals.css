@@ -1664,3 +1664,18 @@ footer::before {
     width: 20px !important;
     height: 20px !important;
 }
+
+/* Hero Slider Navigation Alignment */
+.hero-section .swiper-button-prev {
+    right: 20px !important;
+    left: auto !important;
+    top: calc(50% + 30px) !important;
+    transform: translateY(-50%) !important;
+}
+
+.hero-section .swiper-button-next {
+    right: 20px !important;
+    left: auto !important;
+    top: calc(50% - 30px) !important;
+    transform: translateY(-50%) !important;
+}
