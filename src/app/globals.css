@@ -186,8 +186,23 @@ header.header-scrolled .top-bar {
     transition: all 0.3s ease-in-out;
 }
 
-.main-header.shrink {
+@keyframes slideDownBounce {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.main-header.scrollto {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px #0000000d;
+    animation: slideDownBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .mobile-toggle {
@@ -1618,4 +1633,33 @@ footer::before {
 .story-placeholder-text {
     font-family: var(--font-cinzel);
     font-size: 24px;
+}
+
+/* Swiper Navigation Custom Styling */
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--primary) !important;
+    background: var(--white) !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 18px !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background: var(--primary) !important;
+    color: var(--white) !important;
+    transform: scale(1.05) !important;
+}
+
+:is(.swiper-button-prev, .swiper-button-next) svg {
+    width: 20px !important;
+    height: 20px !important;
 }

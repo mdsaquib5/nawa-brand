@@ -2,10 +2,10 @@
 import Link from "next/link";
 import { GiFlowers } from "react-icons/gi";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
+import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
-import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const Hero = () => {
     const banners = [
@@ -24,10 +24,10 @@ const Hero = () => {
     return (
         <div className="hero-section">
             <Swiper
-                modules={[Autoplay, EffectFade, Pagination]}
+                modules={[Autoplay, EffectFade, Navigation]}
                 effect="fade"
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
-                pagination={{ clickable: true }}
+                navigation={true}
                 loop={true}
                 className="hero-swiper"
             >

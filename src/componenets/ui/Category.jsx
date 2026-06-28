@@ -2,9 +2,8 @@
 import { BsArrowRight } from "react-icons/bs";
 import Titles from "../layout/Tittle";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const Category = () => {
@@ -21,7 +20,7 @@ const Category = () => {
         },
         {
             id: 3,
-            name: "Peeli dhoop",
+            name: "Peeli Dhoop",
             image: "/nawa-phulkari-cotton-collection/peeli-dhoop/1.jpg",
         },
         {
@@ -31,7 +30,7 @@ const Category = () => {
         },
         {
             id: 5,
-            name: "The Odisha Edit",
+            name: "Nawa Special",
             image: "/nawa-phulkari-cotton-collection/peeli-dhoop/1.jpg",
         }
     ];
@@ -43,11 +42,11 @@ const Category = () => {
                 
                 <div className="category-swiper-wrapper">
                     <Swiper
-                        modules={[Autoplay, Pagination, Navigation]}
+                        modules={[Autoplay, Navigation]}
                         spaceBetween={30}
                         slidesPerView={1}
                         autoplay={{ delay: 3500, disableOnInteraction: false }}
-                        pagination={{ clickable: true, dynamicBullets: true }}
+                        navigation={true}
                         breakpoints={{
                             640: { slidesPerView: 2 },
                             992: { slidesPerView: 3 },
