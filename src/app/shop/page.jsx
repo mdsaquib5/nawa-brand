@@ -111,23 +111,19 @@ const ShopContent = () => {
 
                 {/* Mobile Filter Toggle & Active Summary */}
                 <div className="shop-toolbar">
-                    <button 
-                        className="mobile-filter-trigger" 
+                    <button
+                        className="mobile-filter-trigger"
                         onClick={() => setIsMobileFilterOpen(true)}
                         id="mobile-filter-open-btn"
                     >
-                        <PiSlidersLight size={20} /> Filter & Sort
+                        <PiSlidersLight size={20} /> Filter
                     </button>
-
-                    <div className="products-count">
-                        Showing <strong>{filteredProducts.length}</strong> {filteredProducts.length === 1 ? 'product' : 'products'}
-                    </div>
 
                     <div className="sort-container">
                         <label htmlFor="sort-by-select" className="sort-label">Sort By:</label>
-                        <select 
-                            id="sort-by-select" 
-                            value={sortBy} 
+                        <select
+                            id="sort-by-select"
+                            value={sortBy}
                             onChange={(e) => setSortBy(e.target.value)}
                             className="sort-select"
                         >
@@ -163,14 +159,14 @@ const ShopContent = () => {
                         <div className="filter-group">
                             <h3 className="filter-group-title">Price: Up to ₹{maxPrice}</h3>
                             <div className="price-slider-container">
-                                <input 
-                                    type="range" 
-                                    min="500" 
-                                    max="5000" 
+                                <input
+                                    type="range"
+                                    min="500"
+                                    max="5000"
                                     step="100"
-                                    value={maxPrice} 
-                                    onChange={(e) => setMaxPrice(Number(e.target.value))} 
-                                    className="price-range-slider" 
+                                    value={maxPrice}
+                                    onChange={(e) => setMaxPrice(Number(e.target.value))}
+                                    className="price-range-slider"
                                 />
                                 <div className="price-range-labels">
                                     <span>₹500</span>
@@ -256,8 +252,8 @@ const ShopContent = () => {
             <div className={`mobile-filter-drawer ${isMobileFilterOpen ? 'drawer-open' : ''}`} id="mobile-filter-drawer">
                 <div className="drawer-header">
                     <h3 className="drawer-title">Filter & Sort</h3>
-                    <button 
-                        className="drawer-close-btn" 
+                    <button
+                        className="drawer-close-btn"
                         onClick={() => setIsMobileFilterOpen(false)}
                         id="mobile-filter-close-btn"
                         aria-label="Close filters"
@@ -310,14 +306,14 @@ const ShopContent = () => {
                     <div className="drawer-filter-group">
                         <h4 className="drawer-group-title">Price: Up to ₹{maxPrice}</h4>
                         <div className="price-slider-container">
-                            <input 
-                                type="range" 
-                                min="500" 
-                                max="5000" 
+                            <input
+                                type="range"
+                                min="500"
+                                max="5000"
                                 step="100"
-                                value={maxPrice} 
-                                onChange={(e) => setMaxPrice(Number(e.target.value))} 
-                                className="price-range-slider drawer-slider" 
+                                value={maxPrice}
+                                onChange={(e) => setMaxPrice(Number(e.target.value))}
+                                className="price-range-slider drawer-slider"
                             />
                             <div className="price-range-labels">
                                 <span>₹500</span>
@@ -354,8 +350,8 @@ const ShopContent = () => {
             </div>
             {/* Drawer Backdrop Overlay */}
             {isMobileFilterOpen && (
-                <div 
-                    className="drawer-overlay-backdrop" 
+                <div
+                    className="drawer-overlay-backdrop"
                     onClick={() => setIsMobileFilterOpen(false)}
                 ></div>
             )}
@@ -365,7 +361,7 @@ const ShopContent = () => {
 
 const ShopPage = () => {
     return (
-        <Suspense fallback={<div className="container" style={{paddingTop: '200px', paddingBottom: '200px', textAlign: 'center', fontFamily: 'var(--font-cinzel)', fontSize: '20px', color: 'var(--primary)'}}>Loading Shop...</div>}>
+        <Suspense fallback={<div className="container" style={{ paddingTop: '200px', paddingBottom: '200px', textAlign: 'center', fontFamily: 'var(--font-cinzel)', fontSize: '20px', color: 'var(--primary)' }}>Loading Shop...</div>}>
             <ShopContent />
         </Suspense>
     );
