@@ -100,7 +100,7 @@ export default function ProductDetailPage({ params }) {
                                             className={`pdp-thumb ${selectedImage === idx ? 'active' : ''}`}
                                             onClick={() => setSelectedImage(idx)}
                                         >
-                                            <Image src={img} alt={`View ${idx + 1}`} width={80} height={100} className="pdp-image" sizes="80px" />
+                                            <Image src={img} alt={`View ${idx + 1}`} width={80} height={100} className="pdp-image" sizes="80px" quality={100} />
                                         </button>
                                     ))}
                                 </div>
@@ -117,6 +117,7 @@ export default function ProductDetailPage({ params }) {
                                             sizes="(max-width: 768px) 100vw, 55vw"
                                             priority
                                             loading="eager"
+                                            quality={100}
                                         />
                                         {images.length > 1 && (
                                             <>
@@ -145,7 +146,7 @@ export default function ProductDetailPage({ params }) {
                                                 className={`pdp-thumb ${selectedImage === idx ? 'active' : ''}`}
                                                 onClick={() => setSelectedImage(idx)}
                                             >
-                                                <Image src={img} alt={`View ${idx + 1}`} width={70} height={88} className="pdp-image" sizes="70px" />
+                                                <Image src={img} alt={`View ${idx + 1}`} width={70} height={88} className="pdp-image" sizes="70px" quality={100} />
                                             </button>
                                         ))}
                                     </div>
@@ -172,7 +173,6 @@ export default function ProductDetailPage({ params }) {
                                     <div className="pdp-size-section">
                                         <div className="pdp-size-header">
                                             <span className="pdp-label">Select Size</span>
-                                            <button className="pdp-size-guide">Size Guide</button>
                                         </div>
                                         <div className="pdp-sizes">
                                             {item.sizes.map(size => (
@@ -217,9 +217,7 @@ export default function ProductDetailPage({ params }) {
                                     </button>
                                 </div>
 
-                                <button className="pdp-wishlist-btn">
-                                    <PiHeartThin size={18} /> Add to Wishlist
-                                </button>
+
 
                                 {/* Trust Badges */}
                                 <div className="pdp-trust-badges">

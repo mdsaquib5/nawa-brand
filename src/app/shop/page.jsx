@@ -14,6 +14,7 @@ const ShopContent = () => {
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedSizes, setSelectedSizes] = useState([]);
     const [sortBy, setSortBy] = useState('default');
+    const [maxPrice, setMaxPrice] = useState(5000); // New price filter state
     const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
     // Initialize category from URL parameter
@@ -55,6 +56,7 @@ const ShopContent = () => {
         setSelectedCategories([]);
         setSelectedSizes([]);
         setSortBy('default');
+        setMaxPrice(5000);
     };
 
     // Filter and Sort logic
@@ -73,7 +75,13 @@ const ShopContent = () => {
             );
         }
 
-        // 3. Sorting
+        // 3. Filter by price range
+        result = result.filter(product => {
+            const price = parseFloat(product.discountedPrice.replace(/,/g, ''));
+            return price <= maxPrice;
+        });
+
+        // 4. Sorting
         if (sortBy === 'price-asc') {
             result.sort((a, b) => {
                 const priceA = parseFloat(a.discountedPrice.replace(/,/g, ''));
@@ -91,7 +99,7 @@ const ShopContent = () => {
         }
 
         return result;
-    }, [selectedCategories, selectedSizes, sortBy]);
+    }, [selectedCategories, selectedSizes, sortBy, maxPrice]);
 
     return (
         <main className="shop-page-section" id="shop-page-wrapper">
@@ -149,6 +157,25 @@ const ShopContent = () => {
                                         <span className="checkbox-text">{cat.label}</span>
                                     </label>
                                 ))}
+                            </div>
+                        </div>
+
+                        <div className="filter-group">
+                            <h3 className="filter-group-title">Price: Up to ₹{maxPrice}</h3>
+                            <div className="price-slider-container">
+                                <input 
+                                    type="range" 
+                                    min="500" 
+                                    max="5000" 
+                                    step="100"
+                                    value={maxPrice} 
+                                    onChange={(e) => setMaxPrice(Number(e.target.value))} 
+                                    className="price-range-slider" 
+                                />
+                                <div className="price-range-labels">
+                                    <span>₹500</span>
+                                    <span>₹5,000</span>
+                                </div>
                             </div>
                         </div>
 
@@ -276,6 +303,26 @@ const ShopContent = () => {
                                     <span className="checkbox-text">{cat.label}</span>
                                 </label>
                             ))}
+                        </div>
+                    </div>
+
+                    {/* Price Range in Drawer */}
+                    <div className="drawer-filter-group">
+                        <h4 className="drawer-group-title">Price: Up to ₹{maxPrice}</h4>
+                        <div className="price-slider-container">
+                            <input 
+                                type="range" 
+                                min="500" 
+                                max="5000" 
+                                step="100"
+                                value={maxPrice} 
+                                onChange={(e) => setMaxPrice(Number(e.target.value))} 
+                                className="price-range-slider drawer-slider" 
+                            />
+                            <div className="price-range-labels">
+                                <span>₹500</span>
+                                <span>₹5,000</span>
+                            </div>
                         </div>
                     </div>
 
