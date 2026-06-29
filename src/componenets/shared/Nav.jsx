@@ -26,7 +26,7 @@ const Nav = ({ closeDrawer }) => {
                     </ul>
                 </li>
                 <li onClick={closeDrawer}><Link href={'/'}>Festive Edit</Link></li>
-                <li onClick={closeDrawer}><Link href={'/'}>Contact Us</Link></li>
+                <li onClick={closeDrawer}><Link href={'/contact'}>Contact Us</Link></li>
             </ul>
         </nav>
     )
