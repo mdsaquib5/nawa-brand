@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import { BsArrowRight } from "react-icons/bs";
 import Titles from "../layout/Tittle";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,28 +11,21 @@ const Category = () => {
     const categories = [
         {
             id: 1,
-            name: "Laal Ishq",
-            image: "/nawa-phulkari-cotton-collection/laal-ishq/4.jpg",
+            name: "Festive Wear",
+            slug: "festive-wear",
+            image: "/brand-image/1.jpg",
         },
         {
             id: 2,
-            name: "Neel Bahaar",
-            image: "/nawa-phulkari-cotton-collection/neel-bahaar/5.jpg",
+            name: "Kota Cotton",
+            slug: "kota-cotton",
+            image: "/products/raatrani/1.jpg",
         },
         {
             id: 3,
-            name: "Peeli Dhoop",
-            image: "/nawa-phulkari-cotton-collection/peeli-dhoop/1.jpg",
-        },
-        {
-            id: 4,
-            name: "Raatrani",
-            image: "/nawa-phulkari-cotton-collection/raatrani/3.jpg",
-        },
-        {
-            id: 5,
-            name: "Nawa Special",
-            image: "/nawa-phulkari-cotton-collection/peeli-dhoop/1.jpg",
+            name: "Phulkari Cotton",
+            slug: "phulkari-cotton",
+            image: "/products/laal-ishq/3.jpg",
         }
     ];
 
@@ -50,25 +44,27 @@ const Category = () => {
                         breakpoints={{
                             640: { slidesPerView: 2 },
                             992: { slidesPerView: 3 },
-                            1200: { slidesPerView: 4 }
+                            1200: { slidesPerView: 3 }
                         }}
                         className="category-swiper"
                     >
                         {categories.map((item) => (
                             <SwiperSlide key={item.id}>
-                                <div className="category-card">
-                                    <div className="category-image-wrapper">
-                                        <img src={item.image} alt={item.name} className="category-image" />
+                                <Link href={`/shop?category=${item.slug}`} className="category-card-link">
+                                    <div className="category-card">
+                                        <div className="category-image-wrapper">
+                                            <img src={item.image} alt={item.name} className="category-image" />
+                                        </div>
+                                        <div className="category-content glass-panel">
+                                            <h2 className="category-name">
+                                                {item.name}
+                                            </h2>
+                                            <span className="category-btn">
+                                                Shop Now <BsArrowRight />
+                                            </span>
+                                        </div>
                                     </div>
-                                    <div className="category-content glass-panel">
-                                        <h2 className="category-name">
-                                            {item.name}
-                                        </h2>
-                                        <button className="category-btn">
-                                            Shop Now <BsArrowRight />
-                                        </button>
-                                    </div>
-                                </div>
+                                </Link>
                             </SwiperSlide>
                         ))}
                     </Swiper>

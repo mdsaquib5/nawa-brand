@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -11,8 +12,15 @@ const ProductCard = ({ item }) => {
 
     const handleQuickShop = (e) => {
         e.preventDefault();
+        e.stopPropagation();
         addToCart(item);
         router.push('/cart');
+    };
+
+    const handleViewDetails = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        router.push(`/product/${item.id}`);
     };
 
     return (
@@ -26,18 +34,23 @@ const ProductCard = ({ item }) => {
             )}
 
             <div className="product-image-wrapper">
-                <Image
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="product-image"
-                    fill
-                    sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    priority
-                    style={{ objectFit: 'cover' }}
-                />
+                <Link href={`/product/${item.id}`} className="product-image-link">
+                    <Image
+                        src={item.imageUrl}
+                        alt={item.title}
+                        className="product-image"
+                        fill
+                        sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        priority
+                        style={{ objectFit: 'cover' }}
+                    />
+                </Link>
 
                 {/* Hover Overlay */}
                 <div className="hover-overlay">
+                    <button className="quick-view-btn" onClick={handleViewDetails}>
+                        View Details
+                    </button>
                     <button className="quick-shop-btn" onClick={handleQuickShop}>
                         <PiShoppingCartThin size={20} /> Quick Shop
                     </button>
@@ -45,7 +58,9 @@ const ProductCard = ({ item }) => {
             </div>
 
             <div className="product-info">
-                <div className="product-title">{item.title}</div>
+                <Link href={`/product/${item.id}`} style={{ textDecoration: 'none' }}>
+                    <div className="product-title">{item.title}</div>
+                </Link>
 
                 <div className="product-price-container">
                     <span className="discounted-price">₹{item.discountedPrice}</span>
