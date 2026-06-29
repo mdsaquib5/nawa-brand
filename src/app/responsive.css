@@ -4,12 +4,20 @@
 /* <= 1600px */
 @media (max-width: 1600px) {}
 
-@media screen and (min-width: 1440px) and (max-width: 1540px) {}
+@media screen and (min-width: 1440px) and (max-width: 1540px) {
+    .bull-text {
+        font-size: 170px;
+    }
+}
 
 /* <= 1440px */
 @media (min-width: 1440px) {}
 
-@media (max-width: 1440px) {}
+@media (max-width: 1440px) {
+    .bull-text {
+        font-size: 110px;
+    }
+}
 
 /* Desktop dropdown hover styling */
 @media (min-width: 1025px) {
@@ -382,6 +390,10 @@
         max-height: none;
         padding: 30px;
     }
+
+    .bull-text {
+        font-size: 70px;
+    }
 }
 
 @media (min-width: 769px) {}
@@ -651,6 +663,10 @@
 
     .shop-header {
         margin-block: 30px;
+    }
+
+    .bull-text {
+        font-size: 36px;
     }
 }
 

@@ -51,6 +51,8 @@ const Footer = () => {
                         {t("footer.developed_by")} <Link href={'http://noohArk.com'} target="_blank" className="dev-link">NoohArk</Link>
                     </div>
                 </div>
+
+                <div className="bull-text">Nawa Officials</div>
             </div>
         </footer>
     )

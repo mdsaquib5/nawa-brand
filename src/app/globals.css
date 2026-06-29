@@ -938,6 +938,8 @@ footer {
     background-color: var(--primary);
     color: var(--bg-light);
     padding-top: 50px;
+    overflow: hidden;
+    z-index: 1;
 }
 
 footer::before {
@@ -1000,11 +1002,12 @@ footer::before {
 
 .footer-bottombar {
     display: grid;
-    /* border-top: 1px solid #55544e57; */
     padding-block: 16px;
     grid-template-columns: repeat(3, 1fr);
     color: #fff9;
     font-size: 13px;
+    z-index: 2;
+    position: relative;
 }
 
 .footer-bottombar {
@@ -4374,4 +4377,14 @@ footer::before {
 .language-toggle span.active {
     color: var(--white);
     font-weight: 700;
+}
+
+.bull-text {
+    font-size: 200px;
+    font-family: var(--font-cinzel);
+    color: var(--bg-light);
+    opacity: 0.1;
+    text-align: center;
+    font-weight: 900;
+    line-height: 0.2;
 }
