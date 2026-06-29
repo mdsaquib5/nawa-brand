@@ -46,7 +46,7 @@ const Footer = () => {
                         <Link href={'/'} className="bottom-link">Terms & Conditions</Link>
                     </div>
                     <div className="signature">
-                        Developed by <Link href={'http://noohark.com'} target="_blank" className="dev-link">Noohark</Link>
+                        Developed by <Link href={'http://noohArk.com'} target="_blank" className="dev-link">Noohark</Link>
                     </div>
                 </div>
             </div>
