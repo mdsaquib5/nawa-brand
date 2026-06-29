@@ -4,6 +4,7 @@ import "./globals.css";
 import "./responsive.css";
 import Header from "@/componenets/layout/Header";
 import Footer from "@/componenets/layout/Footer";
+import BackToTop from "@/componenets/shared/BackToTop";
 
 export const metadata = {
   title: "Nawa - Officials",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
