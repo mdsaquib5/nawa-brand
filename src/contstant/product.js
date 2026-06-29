@@ -10,9 +10,11 @@ export const products = [
         category: "phulkari-cotton",
         sizes: ["S", "M", "L", "XL"],
         images: [
-            "/products/laal-ishq/3.jpg",
             "/products/laal-ishq/1.jpg",
-            "/products/laal-ishq/2.jpg"
+            "/products/laal-ishq/2.jpg",
+            "/products/laal-ishq/3.jpg",
+            "/products/laal-ishq/4.jpg",
+            "/products/laal-ishq/5.jpg"
         ],
         description: "Delicate and lightweight, this white full-sleeve top features hand-crafted Phulkari embroidery on premium cotton fabric. Elegant necklines and breathable material make it a daily wear favorite."
     },
@@ -30,7 +32,9 @@ export const products = [
             "/products/neel-bahaar/1.jpg",
             "/products/neel-bahaar/2.jpg",
             "/products/neel-bahaar/3.jpg",
-            "/products/neel-bahaar/4.jpg"
+            "/products/neel-bahaar/4.jpg",
+            "/products/neel-bahaar/5.jpg",
+            "/products/neel-bahaar/6.jpg",
         ],
         description: "Rooted in traditional thread-craft, this deep red salwar suit is adorned with intricate hand embroidery. Crafted from high-grade cotton, offering maximum comfort and elegance for festive occasions."
     },
@@ -46,7 +50,8 @@ export const products = [
         sizes: ["S", "M", "L", "XL"],
         images: [
             "/products/raatrani/1.jpg",
-            "/products/raatrani/2.jpg"
+            "/products/raatrani/2.jpg",
+            "/products/raatrani/3.jpg"
         ],
         description: "A striking Bombkai-inspired suit set woven on timeless Kota cotton fabric. Beautiful texture combined with breathable weave ensures you stay elevated yet comfortable."
     },
@@ -61,9 +66,12 @@ export const products = [
         category: "phulkari-cotton",
         sizes: ["S", "M", "L", "XL", "XXL"],
         images: [
+            "/products/neel-bahaar/1.jpg",
+            "/products/neel-bahaar/2.jpg",
             "/products/neel-bahaar/3.jpg",
             "/products/neel-bahaar/4.jpg",
-            "/products/neel-bahaar/6.jpg"
+            "/products/neel-bahaar/5.jpg",
+            "/products/neel-bahaar/6.jpg",
         ],
         description: "A minimalist daily wear Kurta Set in soft premium cotton. Clean silhouettes and comfortable fit tailored for long office hours and casual outings."
     },
@@ -78,9 +86,11 @@ export const products = [
         category: "phulkari-cotton",
         sizes: ["S", "M", "L"],
         images: [
-            "/products/laal-ishq/3.jpg",
             "/products/laal-ishq/1.jpg",
-            "/products/laal-ishq/2.jpg"
+            "/products/laal-ishq/2.jpg",
+            "/products/laal-ishq/3.jpg",
+            "/products/laal-ishq/4.jpg",
+            "/products/laal-ishq/5.jpg"
         ],
         description: "An exquisite white embroidered top highlighting soft thread detailing and modern sleeve cuts. Ideal for a minimal yet traditional style statement."
     },
@@ -97,7 +107,10 @@ export const products = [
         images: [
             "/products/neel-bahaar/1.jpg",
             "/products/neel-bahaar/2.jpg",
-            "/products/neel-bahaar/3.jpg"
+            "/products/neel-bahaar/3.jpg",
+            "/products/neel-bahaar/4.jpg",
+            "/products/neel-bahaar/5.jpg",
+            "/products/neel-bahaar/6.jpg",
         ],
         description: "Celebrate cultural heritage with this hand-embroidered red suit. Features a premium cotton base, ideal for ceremonies and gatherings where you value comfort."
     },
@@ -113,7 +126,8 @@ export const products = [
         sizes: ["S", "M", "L", "XL", "XXL"],
         images: [
             "/products/raatrani/1.jpg",
-            "/products/raatrani/2.jpg"
+            "/products/raatrani/2.jpg",
+            "/products/raatrani/3.jpg"
         ],
         description: "Exquisite craftsmanship meets modern design in this lightweight Kota cotton outfit. Features beautiful border motifs inspired by classic weaving designs."
     },
@@ -128,9 +142,12 @@ export const products = [
         category: "phulkari-cotton",
         sizes: ["M", "L", "XL", "XXL"],
         images: [
+            "/products/neel-bahaar/1.jpg",
+            "/products/neel-bahaar/2.jpg",
+            "/products/neel-bahaar/3.jpg",
             "/products/neel-bahaar/4.jpg",
+            "/products/neel-bahaar/5.jpg",
             "/products/neel-bahaar/6.jpg",
-            "/products/neel-bahaar/1.jpg"
         ],
         description: "A perfect blend of comfort and style. This pure cotton Kurta Set is breathable, lightweight, and features minimalistic neck patterns."
     }
