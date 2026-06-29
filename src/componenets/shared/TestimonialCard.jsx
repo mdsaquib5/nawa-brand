@@ -17,7 +17,7 @@ const TestimonialCard = ({ item }) => {
                 ))}
             </div>
 
-            <p className="testimonial-comment">"{item.comment}"</p>
+            <p className="testimonial-comment">&ldquo;{item.comment}&rdquo;</p>
 
             <div className="testimonial-header">
                 <div className="avatar-wrapper">
