@@ -52,19 +52,20 @@
     .menu {
         position: fixed;
         top: 0;
-        left: -100%;
+        left: 0;
+        transform: translateX(-100%);
         width: 300px !important;
         height: 100vh;
         flex: initial !important;
         background: var(--bg-light);
         box-shadow: 2px 0 10px #0000001a;
-        transition: left 0.3s ease-in-out;
+        transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.15); /* Bounce effect */
         z-index: 1;
         overflow-y: auto;
     }
 
     .menu.drawer-open {
-        left: 0;
+        transform: translateX(0);
     }
 
     nav ul {
