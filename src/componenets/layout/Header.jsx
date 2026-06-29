@@ -7,6 +7,8 @@ import { PiListThin, PiXThin } from "react-icons/pi";
 import { PiShoppingCartLight, PiPhoneCallThin } from "react-icons/pi";
 import { CiInstagram } from "react-icons/ci";
 import { useCartStore } from "../../store/useCartStore";
+import { useTranslation } from "../../context/LanguageContext";
+import LanguageToggle from "../shared/LanguageToggle";
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -15,6 +17,8 @@ const Header = () => {
     
     const cart = useCartStore((state) => state.cart);
     const totalItems = cart ? cart.reduce((acc, item) => acc + item.quantity, 0) : 0;
+    
+    const { t } = useTranslation();
 
     useEffect(() => {
         setMounted(true);
@@ -45,8 +49,9 @@ const Header = () => {
                                 <Link href={'tel:+919821917346'} className="topbar-link">+91 9821917346</Link>
                             </div>
                         </div>
-                        <div className="topbar-text">Enjoy Free Shipping on Orders Above ₹1,499</div>
+                        <div className="topbar-text">{t("header.free_shipping")}</div>
                         <div className="topbar-media">
+                            <LanguageToggle />
                             <Link href={'https://www.instagram.com/nawaofficials'} target="_blank"><CiInstagram /></Link>
                         </div>
                     </div>

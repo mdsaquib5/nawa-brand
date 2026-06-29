@@ -4345,3 +4345,33 @@ footer::before {
     box-shadow: 0 8px 25px rgba(139, 35, 50, 0.25);
     transform: translateY(-5px);
 }
+
+/* ===== Language Toggle ===== */
+.language-toggle {
+    background: transparent;
+    border: none;
+    font-family: var(--font-inter);
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffffcc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+    color: var(--white);
+}
+
+.language-toggle .separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+
+.language-toggle span.active {
+    color: var(--white);
+    font-weight: 700;
+}

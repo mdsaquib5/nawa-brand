@@ -2,8 +2,10 @@
 import Link from "next/link";
 import Logo from "../shared/Logo";
 import { GiFlowers } from "react-icons/gi";
+import { useTranslation } from "../../context/LanguageContext";
 
 const Footer = () => {
+    const { t } = useTranslation();
     return (
         <footer>
             <div className="container">
@@ -15,38 +17,38 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-links">
-                        <div className="footer-title"><GiFlowers /> Shop Category</div>
+                        <div className="footer-title"><GiFlowers /> {t("footer.shop_category")}</div>
                         <ul className="footer-ul">
-                            <li><Link href={'/shop'} className="footer-link">Embroidered Suits</Link></li>
-                            <li><Link href={'/shop'} className="footer-link">Kurta Sets</Link></li>
-                            <li><Link href={'/shop'} className="footer-link">The Odisha Edit</Link></li>
+                            <li><Link href={'/shop'} className="footer-link">{t("footer.embroidered_suits")}</Link></li>
+                            <li><Link href={'/shop'} className="footer-link">{t("footer.kurta_sets")}</Link></li>
+                            <li><Link href={'/shop'} className="footer-link">{t("footer.the_odisha_edit")}</Link></li>
                         </ul>
                     </div>
                     <div className="footer-links">
-                        <div className="footer-title"><GiFlowers /> Quick Links</div>
+                        <div className="footer-title"><GiFlowers /> {t("footer.quick_links")}</div>
                         <ul className="footer-ul">
-                            <li><Link href={'/#handcrafted'} className="footer-link">Nawa Handcrafted</Link></li>
-                            <li><Link href={'/#founder'} className="footer-link">About Nawa</Link></li>
-                            <li><Link href={'/#testimonials'} className="footer-link">Testimonials</Link></li>
+                            <li><Link href={'/#handcrafted'} className="footer-link">{t("footer.nawa_handcrafted")}</Link></li>
+                            <li><Link href={'/#founder'} className="footer-link">{t("footer.about_nawa")}</Link></li>
+                            <li><Link href={'/#testimonials'} className="footer-link">{t("footer.testimonials")}</Link></li>
                         </ul>
                     </div>
                     <div className="footer-links">
-                        <div className="footer-title"><GiFlowers /> Customer Support</div>
+                        <div className="footer-title"><GiFlowers /> {t("footer.customer_support")}</div>
                         <ul className="footer-ul">
-                            <li><Link href={'/contact'} className="footer-link">Contact Us</Link></li>
-                            <li><Link href={'/'} className="footer-link">Shipping Information</Link></li>
-                            <li><Link href={'/'} className="footer-link">Return Policy</Link></li>
+                            <li><Link href={'/contact'} className="footer-link">{t("footer.contact_us")}</Link></li>
+                            <li><Link href={'/'} className="footer-link">{t("footer.shipping_info")}</Link></li>
+                            <li><Link href={'/'} className="footer-link">{t("footer.return_policy")}</Link></li>
                         </ul>
                     </div>
                 </div>
                 <div className="footer-bottombar">
-                    <p>© 2026 Nawa. Crafted with everyday grace.</p>
+                    <p>{t("footer.copyright")}</p>
                     <div className="linking">
-                        <Link href={'/'} className="bottom-link">Privacy Policy</Link>
-                        <Link href={'/'} className="bottom-link">Terms & Conditions</Link>
+                        <Link href={'/'} className="bottom-link">{t("footer.privacy_policy")}</Link>
+                        <Link href={'/'} className="bottom-link">{t("footer.terms")}</Link>
                     </div>
                     <div className="signature">
-                        Developed by <Link href={'http://noohArk.com'} target="_blank" className="dev-link">NoohArk</Link>
+                        {t("footer.developed_by")} <Link href={'http://noohArk.com'} target="_blank" className="dev-link">NoohArk</Link>
                     </div>
                 </div>
             </div>

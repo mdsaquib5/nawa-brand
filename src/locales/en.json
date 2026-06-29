@@ -1,0 +1,30 @@
+{
+  "header": {
+    "free_shipping": "Enjoy Free Shipping on Orders Above ₹1,499",
+    "shop": "Shop",
+    "collections": "Collections",
+    "kurta_sets": "Kurta Sets",
+    "embroidered_suits": "Embroidered Suits",
+    "daily_wear": "Daily Wear",
+    "festive_edit": "Festive Edit",
+    "contact_us": "Contact Us"
+  },
+  "footer": {
+    "shop_category": "Shop Category",
+    "embroidered_suits": "Embroidered Suits",
+    "kurta_sets": "Kurta Sets",
+    "the_odisha_edit": "The Odisha Edit",
+    "quick_links": "Quick Links",
+    "nawa_handcrafted": "Nawa Handcrafted",
+    "about_nawa": "About Nawa",
+    "testimonials": "Testimonials",
+    "customer_support": "Customer Support",
+    "contact_us": "Contact Us",
+    "shipping_info": "Shipping Information",
+    "return_policy": "Return Policy",
+    "copyright": "© 2026 Nawa. Crafted with everyday grace.",
+    "privacy_policy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "developed_by": "Developed by"
+  }
+}

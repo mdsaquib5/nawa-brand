@@ -5,6 +5,7 @@ import "./responsive.css";
 import Header from "@/componenets/layout/Header";
 import Footer from "@/componenets/layout/Footer";
 import BackToTop from "@/componenets/shared/BackToTop";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata = {
   title: "Nawa - Officials",
@@ -15,10 +16,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${cinzel.variable} ${inter.variable} ${inter.className}`}>
-        <Header />
-        {children}
-        <Footer />
-        <BackToTop />
+        <LanguageProvider>
+          <Header />
+          {children}
+          <Footer />
+          <BackToTop />
+        </LanguageProvider>
       </body>
     </html>
   );
