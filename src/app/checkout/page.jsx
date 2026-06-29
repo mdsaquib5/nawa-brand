@@ -112,16 +112,6 @@ const CheckoutPage = () => {
                 <h2>Order Redirected to WhatsApp!</h2>
                 <p>We have redirected you to WhatsApp to place your order. Please send the pre-filled message in WhatsApp to confirm your purchase.</p>
                 <p className="order-details-notice">If the WhatsApp window did not open, please click the button below:</p>
-                <button 
-                    onClick={() => {
-                        window.open(`https://wa.me/919821917346?text=${encodeURIComponent(
-                            `Hi Nawa, I just placed an order. Please confirm my order details.`
-                        )}`, '_blank');
-                    }}
-                    className="btn-primary re-open-wa-btn"
-                >
-                    Open WhatsApp Again
-                </button>
                 <Link href="/" className="continue-shopping-success-btn">
                     Continue Shopping
                 </Link>
@@ -133,21 +123,21 @@ const CheckoutPage = () => {
         <section className="checkout-page-section">
             <div className="container">
                 <h1 className="checkout-page-title">Checkout</h1>
-                
+
                 <form onSubmit={handlePlaceOrder} className="checkout-split-grid">
                     {/* Left: Customer Info Form */}
                     <div className="checkout-form-column">
                         <h2>Shipping Information</h2>
-                        
+
                         <div className="form-field-group">
                             <label htmlFor="name">Full Name *</label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                value={customer.name} 
-                                onChange={handleInputChange} 
-                                required 
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={customer.name}
+                                onChange={handleInputChange}
+                                required
                                 placeholder="Enter your full name"
                             />
                         </div>
@@ -155,25 +145,25 @@ const CheckoutPage = () => {
                         <div className="form-group-row">
                             <div className="form-field-group">
                                 <label htmlFor="phone">WhatsApp Phone Number *</label>
-                                <input 
-                                    type="tel" 
-                                    id="phone" 
-                                    name="phone" 
-                                    value={customer.phone} 
-                                    onChange={handleInputChange} 
-                                    required 
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    value={customer.phone}
+                                    onChange={handleInputChange}
+                                    required
                                     placeholder="e.g. +91 98765 43210"
                                 />
                             </div>
                             <div className="form-field-group">
                                 <label htmlFor="email">Email Address *</label>
-                                <input 
-                                    type="email" 
-                                    id="email" 
-                                    name="email" 
-                                    value={customer.email} 
-                                    onChange={handleInputChange} 
-                                    required 
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={customer.email}
+                                    onChange={handleInputChange}
+                                    required
                                     placeholder="Enter your email"
                                 />
                             </div>
@@ -181,13 +171,13 @@ const CheckoutPage = () => {
 
                         <div className="form-field-group">
                             <label htmlFor="address">Delivery Address *</label>
-                            <input 
-                                type="text" 
-                                id="address" 
-                                name="address" 
-                                value={customer.address} 
-                                onChange={handleInputChange} 
-                                required 
+                            <input
+                                type="text"
+                                id="address"
+                                name="address"
+                                value={customer.address}
+                                onChange={handleInputChange}
+                                required
                                 placeholder="House / Flat No., Street, Landmark"
                             />
                         </div>
@@ -195,37 +185,37 @@ const CheckoutPage = () => {
                         <div className="form-group-row-three">
                             <div className="form-field-group">
                                 <label htmlFor="city">City *</label>
-                                <input 
-                                    type="text" 
-                                    id="city" 
-                                    name="city" 
-                                    value={customer.city} 
-                                    onChange={handleInputChange} 
-                                    required 
+                                <input
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    value={customer.city}
+                                    onChange={handleInputChange}
+                                    required
                                     placeholder="City"
                                 />
                             </div>
                             <div className="form-field-group">
                                 <label htmlFor="state">State *</label>
-                                <input 
-                                    type="text" 
-                                    id="state" 
-                                    name="state" 
-                                    value={customer.state} 
-                                    onChange={handleInputChange} 
-                                    required 
+                                <input
+                                    type="text"
+                                    id="state"
+                                    name="state"
+                                    value={customer.state}
+                                    onChange={handleInputChange}
+                                    required
                                     placeholder="State"
                                 />
                             </div>
                             <div className="form-field-group">
                                 <label htmlFor="pincode">Pincode *</label>
-                                <input 
-                                    type="text" 
-                                    id="pincode" 
-                                    name="pincode" 
-                                    value={customer.pincode} 
-                                    onChange={handleInputChange} 
-                                    required 
+                                <input
+                                    type="text"
+                                    id="pincode"
+                                    name="pincode"
+                                    value={customer.pincode}
+                                    onChange={handleInputChange}
+                                    required
                                     placeholder="6 digit PIN code"
                                 />
                             </div>
@@ -247,7 +237,7 @@ const CheckoutPage = () => {
                     <div className="checkout-summary-column">
                         <div className="checkout-summary-card">
                             <h2>Your Order</h2>
-                            
+
                             <div className="checkout-items-preview">
                                 {cart.map((item) => {
                                     const itemPrice = parsePrice(item.discountedPrice);
@@ -281,9 +271,9 @@ const CheckoutPage = () => {
                                 <span>{formatPrice(cartTotal)}</span>
                             </div>
 
-                            <button 
-                                type="submit" 
-                                className="btn-primary place-order-btn" 
+                            <button
+                                type="submit"
+                                className="btn-primary place-order-btn"
                                 disabled={isPlacing}
                             >
                                 {isPlacing ? "Processing..." : "Place Order via WhatsApp"}

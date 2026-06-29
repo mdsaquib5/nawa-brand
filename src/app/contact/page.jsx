@@ -52,7 +52,7 @@ const ContactPage = () => {
                                 <div className="contact-info-text">
                                     <h4>Call or WhatsApp</h4>
                                     <p><Link href="tel:+919821917346">+91 98219 17346</Link></p>
-                                    <span>Mon-Sat: 10 AM - 7 PM</span>
+                                    <span>Mon-Sat: 9 AM - 6 PM</span>
                                 </div>
                             </div>
                             <div className="contact-info-item">
