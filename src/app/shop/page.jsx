@@ -348,13 +348,6 @@ const ShopContent = () => {
                     </button>
                 </div>
             </div>
-            {/* Drawer Backdrop Overlay */}
-            {isMobileFilterOpen && (
-                <div
-                    className="drawer-overlay-backdrop"
-                    onClick={() => setIsMobileFilterOpen(false)}
-                ></div>
-            )}
         </main>
     );
 };
