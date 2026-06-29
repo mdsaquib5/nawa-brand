@@ -108,7 +108,7 @@ const Testimonial = () => {
     ];
 
     return (
-        <section>
+        <section id="testimonials">
             <div className="container">
                 <Titles title={'What Our Customers Say'} />
                 <div className="testimonial-grid">

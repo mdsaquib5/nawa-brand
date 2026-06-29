@@ -17,27 +17,25 @@ const Footer = () => {
                     <div className="footer-links">
                         <div className="footer-title"><GiFlowers /> Shop Category</div>
                         <ul className="footer-ul">
-                            <li><Link href={'/'} className="footer-link">Embroidered Suits</Link></li>
-                            <li><Link href={'/'} className="footer-link">Kurta Sets</Link></li>
-                            <li><Link href={'/'} className="footer-link">Co-ord Sets</Link></li>
-                            <li><Link href={'/'} className="footer-link">The Odisha Edit</Link></li>
+                            <li><Link href={'/shop'} className="footer-link">Embroidered Suits</Link></li>
+                            <li><Link href={'/shop'} className="footer-link">Kurta Sets</Link></li>
+                            <li><Link href={'/shop'} className="footer-link">The Odisha Edit</Link></li>
                         </ul>
                     </div>
                     <div className="footer-links">
                         <div className="footer-title"><GiFlowers /> Quick Links</div>
                         <ul className="footer-ul">
-                            <li><Link href={'/'} className="footer-link">Our Story</Link></li>
-                            <li><Link href={'/'} className="footer-link">About Nawa</Link></li>
-                            <li><Link href={'/'} className="footer-link">Testimonials</Link></li>
+                            <li><Link href={'/#handcrafted'} className="footer-link">Nawa Handcrafted</Link></li>
+                            <li><Link href={'/#founder'} className="footer-link">About Nawa</Link></li>
+                            <li><Link href={'/#testimonials'} className="footer-link">Testimonials</Link></li>
                         </ul>
                     </div>
                     <div className="footer-links">
                         <div className="footer-title"><GiFlowers /> Customer Support</div>
                         <ul className="footer-ul">
-                            <li><Link href={'/'} className="footer-link">Contact Us</Link></li>
+                            <li><Link href={'/contact'} className="footer-link">Contact Us</Link></li>
                             <li><Link href={'/'} className="footer-link">Shipping Information</Link></li>
                             <li><Link href={'/'} className="footer-link">Return Policy</Link></li>
-                            <li><Link href={'/'} className="footer-link">FAQs</Link></li>
                         </ul>
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const BrandStory = () => {
     return (
-        <section className="brand-story-section">
+        <section className="brand-story-section" id="handcrafted">
             <div className="container">
                 <div className="story-flex">
                     <div className="story-content">

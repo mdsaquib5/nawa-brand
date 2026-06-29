@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const FounderMessage = () => {
     return (
-        <section className="founder-section" id="founder-message-section">
+        <section className="founder-section" id="founder">
             <div className="container">
                 <div className="founder-row">
                     <div className="founder-text-column">

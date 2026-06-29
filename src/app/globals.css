@@ -924,7 +924,7 @@ header.header-scrolled .top-bar {
     margin-bottom: 14px;
     font-size: 13px;
     font-weight: 300;
-    color: var(--accent);
+    color: var(--text);
     line-height: 1.6;
     width: 100%;
     max-width: 90%;
@@ -1729,7 +1729,7 @@ footer::before {
 .contact-story-desc {
     font-size: 14px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffffe6;
 }
 
 .contact-info-list {
@@ -1737,7 +1737,7 @@ footer::before {
     flex-direction: column;
     gap: 25px;
     background-color: var(--white);
-    padding: 35px;
+    padding: 20px;
     border-radius: 16px;
     border: 1px solid var(--glass-border);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
@@ -1788,7 +1788,7 @@ footer::before {
 
 .contact-form-col {
     background-color: var(--white);
-    padding: 50px;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.03);
     border: 1px solid var(--glass-border);
